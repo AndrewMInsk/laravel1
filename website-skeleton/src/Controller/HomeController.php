@@ -1,22 +1,22 @@
 <?
-// src/Controller/LuckyController.php
-namespace App\Controller;
+    namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\HttpFoundation\Response;
+    use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController
-{
-/**
-* @Route("/home/number/{max}", name="app_lucky_number")
-*/
-public function number($max)
-{
-$number = random_int(0, $max);
-    dump($max);
+    class HomeController extends AbstractController
+    {
+        /**
+         * @Route("/", name="app_lucky_number")
+         * return Request
+         */
+        public function index(Request $request): Response
+        {
+//            dump($request);
+//            die();
+            return $this->render('app/home.html.twig', ['number' => 1]);
 
-return new Response(
-'<html><body>Lucky number: '.$number.'</body></html>'
-);
-}
-}
+        }
+    }
