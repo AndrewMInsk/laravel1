@@ -15,10 +15,13 @@
         {
             $number = random_int(0, 44);
          //   dump($number);
-            return new Response(
-                '<html><body>Lucky number: '.$number.'</body></html>'
-            );
-            return $this->render('lucky/number.html.twig', ['number' => $number]);
+//            return new Response(
+//                '<html><body>Lucky number: '.$number.'</body></html>'
+//            );
+            return $this->render('body/number.html.twig', ['number' => $number]);
+        }
+        public function feedbackAction(){
+            return $this->render('body/feedback.html.twig');
 
         }
     }
