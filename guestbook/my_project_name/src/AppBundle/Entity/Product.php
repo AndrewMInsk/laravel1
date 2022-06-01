@@ -43,9 +43,9 @@ class Product
     private $description;
 
     /**
-     * @var string
+     * @var Category|null
      *
-     * @ORM\Column(name="category", type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
      */
     private $category;
     /**
@@ -153,9 +153,9 @@ class Product
     /**
      * Get category
      *
-     * @return string
+     * @return Category|null
      */
-    public function getCategory()
+    public function getCategory(): ?Category
     {
         return $this->category;
     }
