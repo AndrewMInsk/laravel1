@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\AppBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,6 +18,7 @@ class ProductController extends Controller
      */
     public function indexAction()
     {
+        $products = $this->getDoctrine()->getRepository('AppBundle:Product')->findAll();
         $products = [];
         for ($i=1;$i<10;$i++){
             $products[] = "" . $i;
