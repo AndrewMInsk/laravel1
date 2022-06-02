@@ -17,6 +17,9 @@
         <a href="{{ path('categories') }}">categories</a>
     </div>
 
+    {% for flash in app.session.flashBag.get('success1') %}
+        {{ flash }}
+    {% endfor %}
     <div id="content">
         {% block content %}{% endblock %}
     </div>
