@@ -24,7 +24,7 @@
         return 'dir/test';
     });
 
+    Route::get('/post/all', [PostController::class, 'all']);
 
-    Route::get('/user/{id}', [PostController::class, 'show']);
-    Route::get('/user/all', [PostController::class, 'all']);
+    Route::get('/post/{id}', [PostController::class, 'show']);
 
