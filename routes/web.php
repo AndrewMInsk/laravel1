@@ -11,20 +11,7 @@
     |
     */
 
-    use App\Http\Controllers\PostController;
+    use App\Http\Controllers\PatternsController;
+    Route::get('/patterns/fundamentals/{alias}', [PatternsController::class, 'show']);
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
-    Route::get('/test', function () {
-        return 'test ';
-    });
-
-    Route::get('/dir/test', function () {
-        return 'dir/test';
-    });
-
-    Route::get('/post/all', [PostController::class, 'all']);
-
-    Route::get('/post/{id}', [PostController::class, 'show']);
 
